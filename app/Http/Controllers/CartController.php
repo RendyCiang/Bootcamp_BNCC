@@ -59,6 +59,11 @@ class CartController extends Controller
 
     public function checkout(Request $request)
     {
+        $request->validate([
+            'address' => 'required|string|min:10|max:100',
+            'postal_code' => 'required|integer|digits:5',
+        ]);
+
         $cart = session()->get('cart', []);
         if (empty($cart)) {
             return redirect('/cart')->with('error', 'Cart is empty.');

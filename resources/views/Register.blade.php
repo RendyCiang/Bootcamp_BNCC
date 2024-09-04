@@ -15,7 +15,7 @@
             <div class="form-row">
                 <div class="form-group" style="width: 100%">
                     <label for="inputAddress">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="Tono" name="name">
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Tono" name="name" value="{{ old('name') }}">
                 </div>
                 @error('name')
                     <p>{{ $message }}</p>
@@ -23,7 +23,7 @@
 
                 <div class="form-group col-md-6" style="width: 100%">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" value="{{ old('email') }}">
                 </div>
                 @error('email')
                     <p>{{ $message }}</p>
@@ -39,7 +39,7 @@
 
                 <div class="form-group" style="width: 100%">
                     <label for="inputAddress">No. Telp</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="08" name="phone">
+                    <input type="text" class="form-control" id="inputAddress" placeholder="08" name="phone" value="{{ old('phone') }}">
                 </div>
                 @error('phone')
                     <p>{{ $message }}</p>

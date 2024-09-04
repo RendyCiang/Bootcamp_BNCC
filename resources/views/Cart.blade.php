@@ -45,12 +45,18 @@
             @csrf
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
-                <input type="text" name="address" id="address" class="form-control" required>
+                <input type="text" name="address" id="address" class="form-control" required value="{{ old('address') }}">
             </div>
+            @error('address')
+                <p>{{ $message }}</p>
+            @enderror
             <div class="mb-3">
                 <label for="postal_code" class="form-label">Postal Code</label>
-                <input type="text" name="postal_code" id="postal_code" class="form-control" required>
+                <input type="text" name="postal_code" id="postal_code" class="form-control" value="{{ old('postal_code') }}">
             </div>
+            @error('postal_code')
+                <p>{{ $message }}</p>
+            @enderror
             <h3>Total: Rp {{ number_format($total, 0, ',', '.') }}</h3>
             <button type="submit" class="btn btn-primary">Checkout</button>
         </form>

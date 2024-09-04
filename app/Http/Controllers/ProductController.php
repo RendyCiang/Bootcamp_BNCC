@@ -60,7 +60,7 @@ class ProductController extends Controller
             'name' => 'required|string|min:5|max:80',
             'price' => 'required|integer',
             'quantity' => 'required|integer',
-            'photo' => 'nullable|image|max:2048',
+            'photo' => 'required|image|max:2048',
             'category_id' => 'required|exists:categories,id',
         ]);
 
